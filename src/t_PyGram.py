@@ -2,12 +2,12 @@
     This file provides unit testing for the different parts of the PQ-Gram algorithm.
 """
 
-import PQGram, tree
+import PyGram, tree
 import unittest, random, itertools
 
 class ProfileCheck(unittest.TestCase):
     """
-        This class verifies that PQGram.Profile is executing properly.
+        This class verifies that PyGram.Profile is executing properly.
     """
         
     def checkProfileEquality(self, profile1, profile2):
@@ -80,7 +80,7 @@ class ProfileCheck(unittest.TestCase):
             
         # Generate Profiles
         for tree1 in self.trees:
-            self.profiles.append(PQGram.Profile(tree1, self.p, self.q))
+            self.profiles.append(PyGram.Profile(tree1, self.p, self.q))
         
     def testProfileCreation(self):
         """Tests the creation of profiles against known profiles."""
@@ -125,7 +125,7 @@ class ProfileCheck(unittest.TestCase):
         
 class RegisterCheck(unittest.TestCase):
     """
-        This class verifies that PQGram.ShiftRegister is executing properly.
+        This class verifies that PyGram.ShiftRegister is executing properly.
     """
 
     def testRegisterCreation(self):
@@ -134,17 +134,17 @@ class RegisterCheck(unittest.TestCase):
         for i in range(10):
             sizes.append(random.randint(1, 50))
         for size in sizes:
-            reg = PQGram.ShiftRegister(size)
+            reg = PyGram.ShiftRegister(size)
             self.assertEqual(size, len(reg.register))
             for item in reg.register:
                 self.assertEqual(item, "*")
                 
     def testRegisterConcatenation(self):
         """concatenate should return the union of the two registers as a list"""
-        reg_one = PQGram.ShiftRegister(2)
+        reg_one = PyGram.ShiftRegister(2)
         reg_one.shift("a")
         reg_one.shift("b")
-        reg_two = PQGram.ShiftRegister(3)
+        reg_two = PyGram.ShiftRegister(3)
         reg_two.shift("c")
         reg_two.shift("d")
         reg_two.shift("e")
@@ -153,7 +153,7 @@ class RegisterCheck(unittest.TestCase):
             
     def testRegisterShift(self):
         """shift should remove an item from the left and add a new item to the right"""
-        reg = PQGram.ShiftRegister(3)
+        reg = PyGram.ShiftRegister(3)
         reg.register[0] = "a"
         reg.register[1] = "b"
         reg.register[2] = "c"
