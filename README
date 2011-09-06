@@ -15,9 +15,9 @@ In effect, this means that if the PQ-Gram distance between tree A and B is less 
 
 USAGE:
 
-To use the PQGram distance you must complete three steps:
+To use PyGram.py distance you must complete three steps:
 
-    1) Re-write or modify tree.py. This class is currently a stub which provides a basic tree structure. In order for PQGram.py to function properly, this stub must be used, or a class with the same characteristics must be put in it's place. These characteristics include:
+    1) Re-write or modify tree.py. This class is currently a stub which provides a basic tree structure. In order for PyGram.py to function properly, this stub must be used, or a class with the same characteristics must be put in it's place. These characteristics include:
             - class Node()
             - def addkid(self, node, before=False)
             - self.label
